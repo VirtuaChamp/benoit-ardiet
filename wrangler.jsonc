@@ -1,0 +1,12 @@
+{
+  "name": "benoitardiet",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2026-07-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "binding": "ASSETS", "directory": "./.output/public" },
+  "routes": [
+    { "pattern": "benoitardiet.com", "custom_domain": true },
+    { "pattern": "www.benoitardiet.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": true }
+}
