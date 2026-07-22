@@ -48,6 +48,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2026-07-03',
   devtools: { enabled: false },
+  nitro: { preset: 'cloudflare_module' },
   app: {
     head: {
       htmlAttrs: { lang: 'en' },
