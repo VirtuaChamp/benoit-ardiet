@@ -17,5 +17,10 @@
     "@iconify-json/lucide": "^1.2.0",
     "typescript": "^5.6.0",
     "vue-tsc": "^3.0.0"
+  },
+  "overrides": {
+    "@emnapi/core": "1.11.2",
+    "@emnapi/runtime": "1.11.2",
+    "@emnapi/wasi-threads": "1.2.2"
   }
 }
