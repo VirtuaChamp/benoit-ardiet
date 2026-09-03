@@ -1,6 +1,6 @@
 # benoitardiet.com
 
-Personal freelance site. Nuxt 4 + Nuxt UI v4, one page, English (FR planned).
+Personal site. Nuxt 4 + Nuxt UI v4, one page, English (FR planned).
 
 ## Develop
 

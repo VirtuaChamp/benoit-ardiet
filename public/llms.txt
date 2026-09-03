@@ -1,16 +1,19 @@
 # Benoit Ardiet
 
-> Freelance fintech .NET engineer in Quito, Ecuador (UTC-5, US Eastern hours). Payment API integrations, SQL Server performance rescue, legacy .NET modernization, Azure cost review, AI adoption for regulated teams. Works in English, French and Spanish.
+> Senior software engineer, fintech payments, in Quito, Ecuador (UTC-5, US Eastern hours). Runs a Swiss money-transfer platform end to end: .NET APIs and about forty payment-partner integrations, a SQL Server database of 1,900 stored procedures, a React Native app in both stores, Jenkins CI/CD, Azure, Cloudflare. Works with coding agents daily since 2024. English, French and Spanish.
 
-Verified results: production deadlocks reduced 98% (288/month to about 4), P95 latency reduced 67% (1.56s to 512ms over 22.3M requests), Azure spend reduced 59% (invoice-verified), 37 payment-partner integrations migrated with parity verification.
+Verified results: production deadlocks from 288 a month to about 4 (Extended Events captures), P95 latency from 1.56 s to 512 ms over 22.3M requests (telemetry), Azure spend cut 59% (Microsoft invoices), one reporting page from 66 s to about 1 s (commit history).
 
 Contact: benoitardiet@gmail.com
+LinkedIn: https://www.linkedin.com/in/benoit-ardiet/
+GitHub: https://github.com/VirtuaChamp
 
 ## Links
 
-- [Home](https://benoitardiet.com/): positioning, services, evidence table and links to the case studies
+- [Home](https://benoitardiet.com/): who he is, the evidence table, areas of work, open source, contact
 - [SQL Server deadlocks](https://benoitardiet.com/work/sql-server-deadlocks): 288 deadlocks a month reduced to about four, using an Extended Events capture and Read Committed Snapshot Isolation
 - [Money-transfer mobile app](https://benoitardiet.com/work/money-transfer-mobile-app): React Native app built solo, 35 screens in four languages, OIDC with PKCE, live on the App Store and Google Play
 - [Redis out-of-memory outage](https://benoitardiet.com/work/redis-out-of-memory-outage): a twenty-minute total outage caused by a session store running out of memory, and why no alert fired
 - [Cloudflare outage continuity](https://benoitardiet.com/work/cloudflare-outage-continuity): restoring service in under half an hour during the 18 November 2025 Cloudflare outage
+- [database-mcp-server](https://github.com/VirtuaChamp/database-mcp-server): read-only SQL Server MCP server for AI assistants, C# and .NET
 - [Notes](https://benoitardiet.com/notes): writing on production systems that move money

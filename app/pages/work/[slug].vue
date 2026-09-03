@@ -33,46 +33,49 @@ useHead({
 <template>
   <main v-if="study" class="pb-24">
     <article class="pt-12">
-      <p class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">{{ study.kicker }}</p>
-      <h1 class="mt-3 text-3xl sm:text-4xl font-bold leading-tight text-balance">{{ study.title }}</h1>
-      <p class="mt-8 text-lg leading-relaxed">{{ study.summary }}</p>
+      <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+        <span class="label">{{ study.kicker }}</span>
+        <span class="stamp">{{ study.when }}</span>
+      </div>
+      <h1 class="h-display mt-5 max-w-4xl text-balance text-4xl sm:text-5xl lg:text-6xl">{{ study.title }}</h1>
+      <p class="mt-8 max-w-3xl text-lg leading-relaxed text-soft">{{ study.summary }}</p>
 
-      <section v-for="section in sections" :key="section.label" class="mt-12">
-        <h2 class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">{{ section.label }}</h2>
-        <p class="mt-3 leading-relaxed text-zinc-700">{{ section.text }}</p>
+      <section v-for="section in sections" :key="section.label" class="mt-12 grid gap-x-8 gap-y-2 border-t border-line pt-6 sm:grid-cols-[220px_1fr]">
+        <h2 class="label">{{ section.label }}</h2>
+        <p class="max-w-3xl leading-relaxed text-soft">{{ section.text }}</p>
       </section>
 
-      <section class="mt-12 border-t border-zinc-200 pt-6">
-        <h2 class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">Evidence</h2>
-        <p class="mt-3 leading-relaxed text-zinc-700">{{ study.evidence }}</p>
-        <p v-if="study.links.length" class="mt-3 flex flex-wrap gap-x-4 gap-y-2">
-          <a
-            v-for="link in study.links"
-            :key="link.href"
-            :href="link.href"
-            target="_blank"
-            class="text-[#d30c13] underline underline-offset-4"
-          >{{ link.label }} ↗</a>
-        </p>
+      <section class="panel mt-12 grid gap-x-8 gap-y-2 p-6 sm:grid-cols-[196px_1fr]">
+        <h2 class="label">Evidence</h2>
+        <div class="flex flex-col gap-3">
+          <p class="max-w-3xl leading-relaxed text-soft">{{ study.evidence }}</p>
+          <p v-if="study.links.length" class="flex flex-wrap gap-x-4 gap-y-2">
+            <a
+              v-for="link in study.links"
+              :key="link.href"
+              :href="link.href"
+              target="_blank"
+              class="font-mono text-sm text-teal underline underline-offset-4"
+            >{{ link.label }} ↗</a>
+          </p>
+        </div>
       </section>
     </article>
 
-    <section class="mt-20 border-t border-zinc-300 pt-12">
-      <h2 class="text-2xl font-bold">Recognise any of this?</h2>
-      <p class="mt-4 leading-relaxed text-zinc-700">
-        Write me two paragraphs about what hurts. I will answer honestly, including when the answer is
-        that you do not need me.
-      </p>
-      <div class="mt-8">
-        <UButton :to="`mailto:${site.email}`" :label="site.email" color="neutral" variant="solid" size="lg" class="rounded-none px-6 font-mono" />
+    <section class="mt-20 flex flex-wrap items-end justify-between gap-6 border-t border-teal/35 pt-10">
+      <div class="flex flex-col gap-2">
+        <h2 class="h-display text-3xl">Want the longer version?</h2>
+        <p class="leading-relaxed text-soft">Email me and I will walk you through it, captures and dashboards included.</p>
       </div>
+      <a :href="`mailto:${site.email}`" class="btn-teal font-mono text-sm">{{ site.email }}</a>
     </section>
 
-    <nav class="mt-20 border-t border-zinc-200 pt-8">
-      <p class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">Other work</p>
+    <nav class="mt-20 border-t border-line pt-8">
+      <p class="label">Other traces</p>
       <ul class="mt-4 space-y-3">
-        <li v-for="other in caseStudies.filter(item => item.slug !== study.slug)" :key="other.slug">
-          <NuxtLink :to="`/work/${other.slug}`" class="leading-relaxed underline underline-offset-4 transition-colors hover:text-[#d30c13]">
+        <li v-for="other in caseStudies.filter(item => item.slug !== study.slug)" :key="other.slug" class="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+          <span class="stamp">{{ other.when }}</span>
+          <NuxtLink :to="`/work/${other.slug}`" class="leading-relaxed underline underline-offset-4 transition-colors hover:text-teal">
             {{ other.title }}
           </NuxtLink>
         </li>

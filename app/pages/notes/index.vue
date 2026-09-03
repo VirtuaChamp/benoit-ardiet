@@ -18,20 +18,20 @@ useHead({
 <template>
   <main class="pb-24">
     <section class="pt-12">
-      <p class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">Notes</p>
-      <h1 class="mt-3 text-3xl sm:text-4xl font-bold leading-tight">Things worth writing down.</h1>
+      <p class="label">Notes</p>
+      <h1 class="h-display mt-3 text-4xl sm:text-5xl">Things worth writing down.</h1>
 
-      <ul v-if="notes.length" class="mt-12">
-        <li v-for="note in notes" :key="note.slug" class="border-t border-zinc-200">
-          <NuxtLink :to="`/notes/${note.slug}`" class="group block py-6 transition-colors hover:bg-zinc-900/[0.03]">
-            <p class="font-mono text-xs uppercase tracking-[0.2em] text-zinc-600">{{ note.date }}</p>
-            <p class="mt-2 text-lg font-semibold transition-colors group-hover:text-[#d30c13]">{{ note.title }}</p>
-            <p class="mt-2 leading-relaxed text-zinc-700">{{ note.summary }}</p>
+      <ul v-if="notes.length" class="mt-10">
+        <li v-for="note in notes" :key="note.slug" class="border-t border-line">
+          <NuxtLink :to="`/notes/${note.slug}`" class="group flex flex-col gap-2 py-6">
+            <span class="stamp">{{ note.date }}</span>
+            <span class="h-display text-2xl transition-colors group-hover:text-teal">{{ note.title }}</span>
+            <span class="leading-relaxed text-soft">{{ note.summary }}</span>
           </NuxtLink>
         </li>
       </ul>
 
-      <p v-else class="mt-8 leading-relaxed text-zinc-700">
+      <p v-else class="mt-8 leading-relaxed text-soft">
         Nothing published here yet.
       </p>
     </section>

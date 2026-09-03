@@ -2,6 +2,8 @@ export type CaseStudyLink = { label: string, href: string }
 
 export type CaseStudy = {
   slug: string
+  ref: string
+  when: string
   title: string
   kicker: string
   summary: string
@@ -15,6 +17,8 @@ export type CaseStudy = {
 export const caseStudies: CaseStudy[] = [
   {
     slug: 'sql-server-deadlocks',
+    ref: '0288-0004',
+    when: '2024 → 2026',
     title: 'From 288 deadlocks a month to about four',
     kicker: 'SQL Server, Swiss money-transfer platform',
     summary: 'Read Committed Snapshot Isolation and a redesign of the worst transactions, but the part that made it possible was capturing the deadlocks properly first.',
@@ -26,6 +30,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'money-transfer-mobile-app',
+    ref: 'APP-0035',
+    when: 'Jan → Aug 2026',
     title: 'A money-transfer app, built alone, live in both stores',
     kicker: 'React Native, iOS and Android',
     summary: '35 screens in four languages, OIDC with PKCE, biometric unlock, through a pentest remediation cycle and App Store review.',
@@ -40,6 +46,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'redis-out-of-memory-outage',
+    ref: 'INC-0320',
+    when: 'Mar 2026 · 20 min',
     title: 'Twenty minutes of HTTP 500, and the alert that never came',
     kicker: 'Incident response, March 2026',
     summary: 'The Redis instance holding user sessions ran out of memory and every page started returning a 500. The part worth writing down is why nothing paged anyone.',
@@ -51,6 +59,8 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: 'cloudflare-outage-continuity',
+    ref: 'INC-1118',
+    when: '18 Nov 2025 · 11:20 UTC',
     title: 'Back online in under half an hour during the Cloudflare outage',
     kicker: 'Business continuity, 18 November 2025',
     summary: 'Cloudflare was down for nearly six hours and took a good part of the web with it. We were serving again in twenty-something minutes, from a decision made under time pressure that I would rather have made in advance.',
