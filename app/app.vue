@@ -4,32 +4,37 @@ import { site } from '~/data/site'
 
 <template>
   <UApp>
-    <div class="grid-paper min-h-screen bg-navy font-sans text-text antialiased">
-      <UContainer class="max-w-6xl">
-        <header class="flex items-center justify-between gap-6 py-7">
-          <NuxtLink to="/" class="flex items-center gap-3 transition-colors hover:text-teal">
-            <img src="/favicon.svg" width="28" height="28" alt="" class="shrink-0">
-            <span class="font-mono text-xs uppercase tracking-[0.18em]">{{ site.name }}</span>
+    <div class="site-bg min-h-screen font-sans text-base leading-relaxed text-text antialiased">
+      <header class="sticky top-0 z-10 border-b border-line/70 bg-navy/70 backdrop-blur-md">
+        <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-6 py-[18px] sm:px-10">
+          <NuxtLink to="/" class="flex items-center gap-3 text-text transition-colors hover:text-teal">
+            <img src="/favicon.svg" width="26" height="26" alt="" class="shrink-0">
+            <span class="font-mono text-xs uppercase tracking-[0.16em]">{{ site.name }}</span>
           </NuxtLink>
-          <nav class="flex gap-6 font-mono text-xs uppercase tracking-[0.18em] text-dim">
-            <NuxtLink to="/#evidence" class="transition-colors hover:text-text">Evidence</NuxtLink>
-            <NuxtLink to="/#incidents" class="transition-colors hover:text-text">Incidents</NuxtLink>
-            <NuxtLink to="/notes" class="transition-colors hover:text-text">Notes</NuxtLink>
-            <a :href="`mailto:${site.email}`" class="text-teal transition-colors hover:text-teal-soft">Email</a>
+          <nav class="flex items-center gap-4 font-mono text-xs uppercase tracking-[0.12em] text-dim sm:gap-7">
+            <NuxtLink to="/#evidence" class="hidden transition-colors hover:text-bright sm:inline">Evidence</NuxtLink>
+            <NuxtLink to="/#incidents" class="transition-colors hover:text-bright">Incidents</NuxtLink>
+            <NuxtLink to="/#work" class="hidden transition-colors hover:text-bright sm:inline">Work</NuxtLink>
+            <NuxtLink to="/notes" class="transition-colors hover:text-bright">Notes</NuxtLink>
+            <a :href="`mailto:${site.email}`" class="rounded-[2px] bg-teal px-3.5 py-2 tracking-[0.08em] text-navy transition-colors hover:bg-teal-soft">Email</a>
           </nav>
-        </header>
+        </div>
+      </header>
 
+      <div class="mx-auto max-w-[1200px] px-6 sm:px-10">
         <NuxtPage />
+      </div>
 
-        <footer class="flex flex-wrap justify-between gap-2 border-t border-line py-8 font-mono text-xs text-dim">
+      <footer class="border-t border-line">
+        <div class="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-3 px-6 py-8 font-mono text-xs text-dim sm:px-10">
           <span>© 2026 {{ site.name }} · {{ site.location }} · UTC−5</span>
-          <span class="flex gap-4">
-            <a :href="site.github" target="_blank" rel="me" class="underline underline-offset-4 transition-colors hover:text-text">GitHub</a>
-            <a :href="site.linkedin" target="_blank" rel="me" class="underline underline-offset-4 transition-colors hover:text-text">LinkedIn</a>
+          <span class="flex gap-5">
+            <a :href="site.github" target="_blank" rel="me" class="transition-colors hover:text-bright">GitHub</a>
+            <a :href="site.linkedin" target="_blank" rel="me" class="transition-colors hover:text-bright">LinkedIn</a>
             <span>No tracking, no cookies.</span>
           </span>
-        </footer>
-      </UContainer>
+        </div>
+      </footer>
     </div>
   </UApp>
 </template>
