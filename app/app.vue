@@ -5,7 +5,7 @@ import { site } from '~/data/site'
 <template>
   <UApp>
     <div class="site-bg min-h-screen font-sans text-base leading-relaxed text-text antialiased">
-      <header class="sticky top-0 z-10 border-b border-line/70 bg-navy/70 backdrop-blur-md">
+      <header class="sticky top-0 z-10 border-b border-line/70 bg-navy/[0.72] backdrop-blur-md">
         <div class="mx-auto flex max-w-[1200px] items-center justify-between gap-6 px-6 py-[18px] sm:px-10">
           <NuxtLink to="/" class="flex items-center gap-3 text-text transition-colors hover:text-teal">
             <img src="/favicon.svg" width="26" height="26" alt="" class="shrink-0">
@@ -16,7 +16,7 @@ import { site } from '~/data/site'
             <NuxtLink to="/#incidents" class="transition-colors hover:text-bright">Incidents</NuxtLink>
             <NuxtLink to="/#work" class="hidden transition-colors hover:text-bright sm:inline">Work</NuxtLink>
             <NuxtLink to="/notes" class="transition-colors hover:text-bright">Notes</NuxtLink>
-            <a :href="`mailto:${site.email}`" class="rounded-[2px] bg-teal px-3.5 py-2 tracking-[0.08em] text-navy transition-colors hover:bg-teal-soft">Email</a>
+            <a :href="`mailto:${site.email}`" class="rounded-full border border-teal/45 px-4 py-2 tracking-[0.08em] text-bright transition-[background-color,border-color,color] duration-150 hover:border-teal hover:bg-teal/12 hover:text-teal-soft">Email</a>
           </nav>
         </div>
       </header>

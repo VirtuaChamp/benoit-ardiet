@@ -44,7 +44,7 @@ useHead({
 
     <article class="pt-12">
       <div class="flex flex-wrap items-center gap-3 font-mono text-[11px] uppercase tracking-[0.14em]">
-        <span class="rounded-[2px] border border-teal/35 px-2.5 py-[5px] text-teal">Trace {{ number }}</span>
+        <span class="rounded-full border border-teal/35 px-3 py-[5px] text-teal">Trace {{ number }}</span>
         <span class="text-dim">{{ study.ref }}</span>
         <span class="text-line">/</span>
         <span class="text-dim">{{ study.kicker }}</span>
@@ -105,7 +105,7 @@ useHead({
         <h2 class="h-hero text-[44px] leading-none tracking-[-0.03em]">Want the longer version?</h2>
         <p class="max-w-[520px] text-pretty text-[17px] text-soft">Email me and I will walk you through it, captures and dashboards included.</p>
       </div>
-      <a :href="`mailto:${site.email}`" class="btn-teal px-6 py-4 font-mono">{{ site.email }}</a>
+      <a :href="`mailto:${site.email}`" class="btn-teal">Email me <span aria-hidden="true">→</span></a>
     </section>
 
     <nav class="mt-24">

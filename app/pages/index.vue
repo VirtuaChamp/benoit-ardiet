@@ -169,7 +169,7 @@ useHead({
       </div>
       <ul class="grid gap-5 md:grid-cols-3">
         <li v-for="project in projects" :key="project.name" class="flex">
-          <a :href="project.href" target="_blank" rel="me" class="flex w-full flex-col gap-4 border border-line p-6 text-text transition-[border-color,transform] duration-150 hover:-translate-y-0.5 hover:border-teal/50">
+          <a :href="project.href" target="_blank" rel="me" class="flex w-full flex-col gap-4 rounded-2xl border border-line p-6 text-text transition-[border-color,transform] duration-150 hover:-translate-y-0.5 hover:border-teal/50">
             <div class="flex items-baseline justify-between gap-3">
               <span class="font-mono text-[15px] text-bright">{{ project.name }}</span>
               <span class="font-mono text-xs text-teal">↗</span>
@@ -211,7 +211,8 @@ useHead({
         </p>
       </div>
       <div class="flex flex-col items-start gap-4">
-        <a :href="`mailto:${site.email}`" class="btn-teal px-6 py-4 font-mono">{{ site.email }}</a>
+        <a :href="`mailto:${site.email}`" class="btn-teal">Email me <span aria-hidden="true">→</span></a>
+        <span class="font-mono text-[13px] text-dim">{{ site.email }} · replies within a day</span>
         <div class="flex flex-col gap-2.5 font-mono text-[13px]">
           <a :href="site.linkedin" target="_blank" rel="me" class="text-dim underline underline-offset-4 transition-colors hover:text-bright">linkedin.com/in/benoit-ardiet ↗</a>
           <a :href="site.github" target="_blank" rel="me" class="text-dim underline underline-offset-4 transition-colors hover:text-bright">github.com/VirtuaChamp ↗</a>
